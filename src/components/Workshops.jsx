@@ -1,0 +1,1 @@
+import React from 'react'; function Workshops() {	return (		<div className='Workshops'>			Workshops		</div>	);}export default Workshops;

@@ -1,0 +1,1 @@
+import React from 'react'; function Sponsors() {	return (		<div className='Sponsors'>			Sponsors		</div>	);}export default Sponsors;
