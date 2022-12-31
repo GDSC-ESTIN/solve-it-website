@@ -67,7 +67,6 @@ export default function NavBar() {
 		<Header
 			sx={{ borderBottom: opened && isMobile && "3px solid #4285F4" }}
 			height={HEADER_HEIGHT}
-			mb={60}
 			className={classes.root}
 		>
 			<Container className={classes.header}>
@@ -75,6 +74,7 @@ export default function NavBar() {
 				<Group spacing={5} className={classes.links}>
 					{items}
 					<Button
+						disabled
 						size="small"
 						sx={{
 							boxShadow: "none",
@@ -102,6 +102,7 @@ export default function NavBar() {
 							{items}
 							<Center>
 								<Button
+									disabled
 									size="large"
 									sx={{
 										backgroundColor: "#4285F4",

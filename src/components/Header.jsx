@@ -1,6 +1,4 @@
 import { Center, Container, Title } from '@mantine/core';
-import { useMediaQuery } from '@mantine/hooks';
-import React from 'react';
 import useStyles from './Header-style';
 
 
@@ -9,7 +7,7 @@ function Header() {
 	const { classes } = useStyles();
 	return (
 		<>
-			<Container>
+			<Container pt={60}>
 				<Center>
 					<Title className={classes.h1}>
 						<span className={classes.blueText}>#solveit </span>

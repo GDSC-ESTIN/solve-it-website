@@ -6,24 +6,38 @@ import TimeLine from './components/TimeLine';
 import Mentors from './components/Mentors';
 import Workshops from './components/Workshops';
 import Sponsors from './components/Sponsors';
-import { Container } from '@mantine/core';
+import { Box, Container } from '@mantine/core';
 
 function App() {
   return (
     <>
       <NavBar />
-      <Header />
-      <Timer />
-      <Container>
-        <About />
+      <WhiteSection>
+        <Header />
+        <Timer />
+      </WhiteSection>
+      <About />
+      <WhiteSection>
         <TimeLine />
         <Mentors />
         <Workshops />
         <Sponsors />
-      </Container>
+      </WhiteSection>
     </>
   );
 }
 
 
 export default App;
+
+
+
+
+
+function WhiteSection({ children }) {
+  return (
+    <Box sx={{ backgroundColor: '#fff' }}>
+      {children}
+    </Box>
+  );
+}
