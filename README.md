@@ -6,7 +6,7 @@ Welcome to the Solve It event website repository! This event, organized by GDSC 
 Event Details
 -------------
 
-*   Date: `february 2023`
+*   Date: `Jan 05Th 2023` to `Aug 03Rd 2023`
 *   Location: `ESTIN`
 
 Features
