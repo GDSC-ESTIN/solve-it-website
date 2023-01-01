@@ -7,7 +7,7 @@ function Workshops() {
 	const { classes } = useStyles();
 	return (
 		<>
-			<Container pt={60}>
+			<Container pt={60} id="Workshops">
 				<Center>
 					<Title className={classes.h1}>
 						<span className={classes.redText}>#Event </span>

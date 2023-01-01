@@ -14,7 +14,7 @@ function TimeLine() {
 	const { classes } = useStyles();
 	return (
 		<>
-			<Container pt={60}>
+			<Container pt={60} id="Timeline">
 				<Center>
 					<Title className={classes.h1}>
 						<span className={classes.yellowText}>#Event </span>

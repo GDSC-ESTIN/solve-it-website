@@ -7,6 +7,7 @@ const useStyles = createStyles((theme) => ({
 		position: "relative",
 		zIndex: 10,
 		borderBottom: "none",
+		position: "sticky",
 		[theme.fn.smallerThan("sm")]: {
 			position: "sticky",
 		},

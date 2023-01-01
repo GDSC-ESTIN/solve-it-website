@@ -11,7 +11,7 @@ function Sponsors() {
 	const isMobile = useMediaQuery('(max-width: 576px)');
 	return (
 		<>
-			<Container pt={60}>
+			<Container pt={60} id="Sponsors">
 				<Center>
 					<Title className={classes.h1}>
 						<span className={classes.yellowText}>#Event </span>

@@ -5,7 +5,7 @@ function About() {
 	const { classes } = useStyles();
 	return (
 		<>
-			<Container pt={60}>
+			<Container pt={60} id="About">
 				<Center>
 					<Title className={classes.h1}>
 						<span className={classes.greenText}>#About </span>

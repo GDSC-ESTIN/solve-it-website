@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import useStyles from './Timer-style';
 import timer_left from '../assets/timer-left.svg';
 import timer_right from "../assets/timer-right.svg";
@@ -8,6 +8,7 @@ import gdscLogo from "../assets/gdsc_logo.svg"
 import mapIcon from "../assets/mapicon.svg";
 import { Box, Center, Container, Group, Overlay, useMantineTheme } from '@mantine/core';
 import { Button, useMediaQuery } from '@mui/material';
+import { motion } from "framer-motion"
 
 
 
@@ -30,16 +31,54 @@ function Timer() {
 export default Timer;
 
 
+function useInterval(callback, delay) {
+	const savedCallback = useRef();
+
+	useEffect(() => {
+		savedCallback.current = callback;
+	}, [callback]);
+
+	useEffect(() => {
+		function tick() {
+			savedCallback.current();
+		}
+		if (delay !== null) {
+			let id = setInterval(tick, delay);
+			return () => clearInterval(id);
+		}
+	}, [delay]);
+}
+
 function Content() {
 	const theme = useMantineTheme();
+	const [days, setDays] = useState("0");
+	const [hours, setHours] = useState("0");
+	const [minutes, setMinutes] = useState("0");
+	const [seconds, setSeconds] = useState("0");
+	const [active, setActive] = useState(false);
+
+	const countDownDate = new Date("february 15 , 2023 08:30:00").getTime();
+
+	useInterval(() => {
+		const now = new Date().getTime();
+
+		const distance = countDownDate - now;
+		setDays(Math.floor(distance / (1000 * 60 * 60 * 24)));
+		setHours(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+		setMinutes(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
+		setSeconds(Math.floor((distance % (1000 * 60)) / 1000));
+
+		setActive(!active);
+	}, 1000);
+
 	return (
 		<>
 			<Container pb={60}>
 				<Group position='center' >
-					<Square number={14} color='#FBBC05' label="DAYS" />
-					<Square number={2} color='#4285F4' label="HOURS" />
-					<Square number={1} color='#FF0000' label="MINUTES" />
-					<Square number={3} color='#D9D9D9' label="SECONDS" />
+					<Square number={days} color='#FBBC05' label="DAYS" />
+					<Square number={hours} color='#4285F4' label="HOURS" />
+					<Square number={minutes} color='#FF0000' label="MINUTES" />
+					<Square number={seconds} color={active ? '#D9D9D9' : "#0F9D58"} label="SECONDS" />
 				</Group>
 				<Center mb={"lg"}>
 					<Group spacing={"xs"} position='left' mt={"xl"}>
@@ -75,9 +114,13 @@ function Content() {
 function Square(props) {
 	const { classes } = useStyles();
 	return (
-		<Box className={classes.Square} sx={{ backgroundColor: props.color }}>
-			{props.number < 10 ? "0" + props.number : props.number}
-			<p className={classes.SmallFont}>{props.label}</p>
-		</Box>
+		<motion.div
+			whileHover={{ scale: 1.2 }}
+		>
+			<Box className={classes.Square} sx={{ backgroundColor: props.color }}>
+				{props.number < 10 ? "0" + props.number : props.number}
+				<p className={classes.SmallFont}>{props.label}</p>
+			</Box>
+		</motion.div>
 	);
 }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
 	Header,
 	Container,
@@ -18,23 +18,23 @@ const HEADER_HEIGHT = 60;
 
 const links = [
 	{
-		link: "/Home",
+		link: "Home",
 		label: "Home"
 	},
 	{
-		link: "/About",
+		link: "About",
 		label: "About"
 	},
 	{
-		link: "/Timeline",
+		link: "Timeline",
 		label: "Timeline"
 	},
 	{
-		link: "/Workshops",
+		link: "Workshops",
 		label: "Workshops"
 	},
 	{
-		link: "/Sponsors",
+		link: "Sponsors",
 		label: "Sponsors"
 	}
 ];
@@ -43,7 +43,7 @@ export default function NavBar() {
 	const theme = useMantineTheme();
 	const isMobile = useMediaQuery("(max-width: 768px)");
 	const [opened, { toggle, close }] = useDisclosure(false);
-	const [active, setActive] = useState(links[0].link);
+	const [active, setActive] = useState("Home");
 	const { classes, cx } = useStyles();
 
 	const items = links.map((link) => (
@@ -56,12 +56,39 @@ export default function NavBar() {
 			onClick={(event) => {
 				event.preventDefault();
 				setActive(link.link);
+				scrollToElement(link.link);
 				close();
 			}}
 		>
 			{link.label}
 		</a>
 	));
+
+	const elements = links.map((link) => link.link);
+
+	const scrollToElement = id => {
+		const element = document.getElementById(id);
+		if (element) {
+			window.scrollTo({
+				top: element.offsetTop,
+				behavior: 'smooth'
+			});
+		}
+	};
+
+	useEffect(() => {
+		const handleScroll = () => {
+			elements.forEach(id => {
+				const element = document.getElementById(id);
+				if (element && window.scrollY >= element.offsetTop - 200 && window.scrollY < element.offsetTop + element.offsetHeight - 200) {
+					setActive(id);
+				}
+			});
+		};
+
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
+	}, [active, elements]);
 
 	return (
 		<Header

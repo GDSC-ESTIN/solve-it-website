@@ -3,6 +3,7 @@ import { AspectRatio, Card, Center, Container, Grid, Image, Title } from '@manti
 import useStyles from './Mentors-style';
 import { useMediaQuery } from '@mantine/hooks';
 import mentorPhoto from "../assets/mentor.png";
+import { motion } from "framer-motion"
 
 function Mentors() {
 	const { classes } = useStyles();

@@ -13,9 +13,9 @@ export default function Footer() {
 			</Container>
 			<Center my="md">
 				<Group position="center">
-					<img src={linkedInIcon} alt="linkedin-icon" width="35px" />
-					<img src={facebookIcon} alt="facebook-icon" width="35px" />
-					<img src={instagramIcon} alt="instagram-icon" width="35px" />
+					<a href="https://www.linkedin.com/company/gdsc-estin/" target={"_blank"}><img src={linkedInIcon} alt="linkedin-icon" width="35px" /></a>
+					<a href="https://www.facebook.com/gdscestin" target={"_blank"}><img src={facebookIcon} alt="facebook-icon" width="35px" /></a>
+					<a href="https://www.instagram.com/gdsc_estin/" target={"_blank"}><img src={instagramIcon} alt="instagram-icon" width="35px" /></a>
 				</Group>
 			</Center>
 		</Box>

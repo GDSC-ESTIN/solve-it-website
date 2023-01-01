@@ -7,7 +7,7 @@ function Header() {
 	const { classes } = useStyles();
 	return (
 		<>
-			<Container pt={60}>
+			<Container pt={60} id="Home">
 				<Center>
 					<Title className={classes.h1}>
 						<span className={classes.blueText}>#solve-it </span>
