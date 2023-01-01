@@ -7,6 +7,8 @@ import Mentors from './components/Mentors';
 import Workshops from './components/Workshops';
 import Sponsors from './components/Sponsors';
 import { Box, Container } from '@mantine/core';
+import Contactus from './components/Contactus';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
         <Workshops />
         <Sponsors />
       </WhiteSection>
+      <Contactus />
+      <Footer />
     </>
   );
 }

@@ -10,7 +10,7 @@ function Header() {
 			<Container pt={60}>
 				<Center>
 					<Title className={classes.h1}>
-						<span className={classes.blueText}>#solveit </span>
+						<span className={classes.blueText}>#solve-it </span>
 						event is HERE!
 					</Title>
 				</Center>

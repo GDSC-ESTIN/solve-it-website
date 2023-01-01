@@ -39,7 +39,7 @@ function MyComponent() {
 		<Timeline sx={{
 			[`& .${timelineOppositeContentClasses.root}`]: {
 				flex: 0.6,
-				[`@media (max-width: 576px)`]: {
+				[`@media (max-width: 450px)`]: {
 					flex: 1,
 				}
 			},
