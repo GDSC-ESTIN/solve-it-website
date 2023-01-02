@@ -17,26 +17,11 @@ import useStyles from "./Navbar-style";
 const HEADER_HEIGHT = 60;
 
 const links = [
-	{
-		link: "Home",
-		label: "Home"
-	},
-	{
-		link: "About",
-		label: "About"
-	},
-	{
-		link: "Timeline",
-		label: "Timeline"
-	},
-	{
-		link: "Workshops",
-		label: "Workshops"
-	},
-	{
-		link: "Sponsors",
-		label: "Sponsors"
-	}
+	{ link: "Home", label: "Home" },
+	{ link: "About", label: "About" },
+	{ link: "Timeline", label: "Timeline" },
+	{ link: "Workshops", label: "Workshops" },
+	{ link: "Sponsors", label: "Sponsors" }
 ];
 
 export default function NavBar() {
@@ -80,7 +65,7 @@ export default function NavBar() {
 		const handleScroll = () => {
 			elements.forEach(id => {
 				const element = document.getElementById(id);
-				if (element && window.scrollY >= element.offsetTop - 200 && window.scrollY < element.offsetTop + element.offsetHeight - 200) {
+				if (element && window.scrollY >= element.offsetTop - 200 && window.scrollY < element.offsetTop + element.offsetHeight) {
 					setActive(id);
 				}
 			});
