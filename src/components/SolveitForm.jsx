@@ -66,7 +66,7 @@ export default function SolveitForm({ setModalContent, setModalOpened, setOpened
             <div className="scroll-to-this-div"></div>
             <ShadowedCard>
                 <TextInput pb={"lg"} mx={"lg"}
-                    placeholder="Ex : KEZIZ Mouayed"
+                    placeholder="EX : KEZIZ Mouayed"
                     label="Your full name"
                     variant="filled"
                     radius="md"
@@ -90,7 +90,7 @@ export default function SolveitForm({ setModalContent, setModalOpened, setOpened
 
             <ShadowedCard>
                 <TextInput pb={"lg"} mx={"lg"}
-                    placeholder="Ex : ESTIN"
+                    placeholder="EX : ESTIN"
                     label="Your University"
                     variant="filled"
                     radius="md"
@@ -170,7 +170,7 @@ export default function SolveitForm({ setModalContent, setModalOpened, setOpened
                 <Textarea pb={"lg"} mx={"lg"}
                     minRows={4}
                     label="Team members"
-                    placeholder="Ex : Member1, Member2, Member3 ..."
+                    placeholder="EX : Member1, Member2, Member3 ..."
                     variant="filled"
                     radius="md"
                     size="md"
@@ -182,7 +182,7 @@ export default function SolveitForm({ setModalContent, setModalOpened, setOpened
             <ShadowedCard>
                 <TextInput pb={"lg"} mx={"lg"}
                     label="Your role in the team"
-                    description="Ex : Team Leader, Frontend Developer, Backend Developer, Designer, Project Manager, ..."
+                    description="EX : Team Leader, Frontend Developer, Backend Developer, Designer, Project Manager, ..."
                     variant="filled"
                     radius="md"
                     size="md"

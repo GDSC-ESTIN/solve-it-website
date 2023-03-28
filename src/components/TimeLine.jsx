@@ -49,11 +49,11 @@ function MyComponent() {
 					<b style={{ color: "#0F9D58" }}>workshops<br /> and talks</b>
 				</TimelineOppositeContent>
 				<TimelineSeparator >
-					<TimelineDot variant="outlined" />
+					<TimelineDot variant="filled" sx={{ backgroundColor: "#0F9D58" }} />
 					<TimelineConnector sx={{ backgroundColor: "#0F9D58" }} />
 				</TimelineSeparator>
 				<TimelineContent>
-					<p><b style={{ color: "#6b6969" }}>Jan 05th : </b> Solveit anounce.</p>
+					<p style={{ textDecoration: "line-through" }}><b style={{ color: "#6b6969" }}>Jan 05th : </b> Solveit anounce.</p>
 					<br />
 				</TimelineContent>
 			</TimelineItem>

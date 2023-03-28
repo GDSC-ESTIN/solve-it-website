@@ -70,7 +70,7 @@ export default function WorkshopForm({ setModalContent, setModalOpened, setOpene
             <div className="scroll-to-this-div"></div>
             <ShadowedCard>
                 <TextInput pb={"lg"} mx={"lg"}
-                    placeholder="Ex : KEZIZ Mouayed"
+                    placeholder="EX : KEZIZ Mouayed"
                     label="Your full name"
                     variant="filled"
                     radius="md"
@@ -82,7 +82,7 @@ export default function WorkshopForm({ setModalContent, setModalOpened, setOpene
 
             <ShadowedCard>
                 <TextInput pb={"lg"} mx={"lg"}
-                    placeholder="Ex : gdsc@estin.dz"
+                    placeholder="EX : gdsc@estin.dz"
                     label="Your Email"
                     variant="filled"
                     radius="md"

@@ -25,6 +25,6 @@ dist-ssr
 
 
 #firebase
-/.firebase
-/firebase.json
-/.firebaserc
+# /.firebase
+# /firebase.json
+# /.firebaserc

@@ -75,10 +75,10 @@ function Content({ setOpend }) {
 		<>
 			<Container pb={60}>
 				<Group position='center' >
-					<Square number={days} color='#FBBC05' label="DAYS" />
-					<Square number={hours} color='#4285F4' label="HOURS" />
-					<Square number={minutes} color='#FF0000' label="MINUTES" />
-					<Square number={seconds} color={active ? '#D9D9D9' : "#0F9D58"} label="SECONDS" />
+					<Square number={0} color='#FBBC05' label="DAYS" />
+					<Square number={0} color='#4285F4' label="HOURS" />
+					<Square number={0} color='#FF0000' label="MINUTES" />
+					<Square number={0} color={active ? '#D9D9D9' : "#0F9D58"} label="SECONDS" />
 				</Group>
 				<Center mb={"lg"}>
 					<Group spacing={"xs"} position='left' mt={"xl"}>
