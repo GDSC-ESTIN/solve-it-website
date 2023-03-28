@@ -6,13 +6,13 @@ import arrowLeft from "../assets/arrowLeft.svg"
 import arrowRight from "../assets/arrowRight.svg"
 import gdscLogo from "../assets/gdsc_logo.svg"
 import mapIcon from "../assets/mapicon.svg";
-import { Box, Center, Container, Group, Overlay, useMantineTheme } from '@mantine/core';
+import { Box, Center, Container, Group, Overlay, Text, useMantineTheme } from '@mantine/core';
 import { Button, useMediaQuery } from '@mui/material';
 import { motion } from "framer-motion"
 
 
 
-function Timer() {
+function Timer({ setOpend }) {
 	const { classes } = useStyles();
 	const isMobile = useMediaQuery('(max-width:768px)');
 	return (
@@ -23,7 +23,7 @@ function Timer() {
 					<img className={classes.imgRight} src={isMobile ? timer_right : timer_right} alt='nn' />
 				</Overlay>
 			</Box>
-			<Content />
+			<Content setOpend={setOpend} />
 		</>
 	);
 }
@@ -49,7 +49,7 @@ function useInterval(callback, delay) {
 	}, [delay]);
 }
 
-function Content() {
+function Content({ setOpend }) {
 	const theme = useMantineTheme();
 	const [days, setDays] = useState("0");
 	const [hours, setHours] = useState("0");
@@ -57,7 +57,7 @@ function Content() {
 	const [seconds, setSeconds] = useState("0");
 	const [active, setActive] = useState(false);
 
-	const countDownDate = new Date("february 15 , 2023 08:30:00").getTime();
+	const countDownDate = new Date("february 16 , 2023 18:30:00").getTime();
 
 	useInterval(() => {
 		const now = new Date().getTime();
@@ -95,10 +95,10 @@ function Content() {
 							backgroundColor: "#4285F4",
 							fontSize: theme.fontSizes.sm
 						}}
-							disabled
+							onClick={() => setOpend(true)}
 							variant="contained"
-
 						>Register Now!</Button>
+
 						<img alt="right-arrow" src={arrowRight} />
 					</Group>
 				</Center>

@@ -2,9 +2,9 @@ import { AspectRatio, Box, Center, Container, Grid, Image, Title } from '@mantin
 import useStyles from './Sponsors-styles';
 import { useMediaQuery } from '@mantine/hooks';
 import { Carousel } from '@mantine/carousel';
-import sponsor1 from "../assets/sponsor1.svg";
-import sponsor2 from "../assets/sponsor2.svg";
-import sponsor3 from "../assets/sponsor3.svg";
+import sponsor1 from "../assets/sponsor1.png";
+import sponsor2 from "../assets/sponsor2.png";
+import sponsor3 from "../assets/sponsor3.png";
 
 function Sponsors() {
 	const { classes } = useStyles();
@@ -15,7 +15,7 @@ function Sponsors() {
 				<Center>
 					<Title className={classes.h1}>
 						<span className={classes.yellowText}>#Event </span>
-						Sponsors
+						Workshops
 					</Title>
 				</Center>
 				{isMobile ? (<MentorsCarousel />) : (<MentorsGrid />)}

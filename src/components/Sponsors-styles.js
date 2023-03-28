@@ -12,7 +12,7 @@ const useStyles = createStyles((theme) => ({
 		},
 	},
 	yellowText: {
-		color: '#FBBC05',
+		color: '#FF0000',
 	},
 	circle: {
 		width: " 100px",

@@ -20,11 +20,11 @@ const links = [
 	{ link: "Home", label: "Home" },
 	{ link: "About", label: "About" },
 	{ link: "Timeline", label: "Timeline" },
-	{ link: "Workshops", label: "Workshops" },
-	{ link: "Sponsors", label: "Sponsors" }
+	// { link: "Workshops", label: "Workshops" },
+	{ link: "Sponsors", label: "Workshops" }
 ];
 
-export default function NavBar() {
+export default function NavBar({ setOpend }) {
 	const theme = useMantineTheme();
 	const isMobile = useMediaQuery("(max-width: 768px)");
 	const [opened, { toggle, close }] = useDisclosure(false);
@@ -86,7 +86,6 @@ export default function NavBar() {
 				<Group spacing={5} className={classes.links}>
 					{items}
 					<Button
-						disabled
 						size="small"
 						sx={{
 							boxShadow: "none",
@@ -95,6 +94,7 @@ export default function NavBar() {
 							fontSize: theme.fontSizes.sm
 						}}
 						variant="contained"
+						onClick={() => setOpend(true)}
 					>
 						Register
 					</Button>
@@ -114,7 +114,6 @@ export default function NavBar() {
 							{items}
 							<Center>
 								<Button
-									disabled
 									size="large"
 									sx={{
 										backgroundColor: "#4285F4",
@@ -122,6 +121,7 @@ export default function NavBar() {
 										paddingRight: "30px"
 									}}
 									variant="contained"
+									onClick={() => setOpend(true)}
 								>
 									Register
 								</Button>

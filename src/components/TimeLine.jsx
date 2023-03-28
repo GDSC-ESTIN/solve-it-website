@@ -68,7 +68,7 @@ function MyComponent() {
 					<TimelineConnector sx={{ backgroundColor: "#4285F4" }} />
 				</TimelineSeparator>
 				<TimelineContent>
-					<p><b style={{ color: "#6b6969" }}>Feb 02nd : </b> Solveit day D.</p>
+					<p><b style={{ color: "#6b6969" }}>Feb 13th : </b> Solveit day D.</p>
 					<p><b style={{ color: "#6b6969" }}>Mar 17th : </b> Submission Open.</p>
 				</TimelineContent>
 			</TimelineItem>

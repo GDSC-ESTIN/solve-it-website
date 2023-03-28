@@ -16,14 +16,12 @@ function Header() {
 				</Center>
 
 				<Center>
-					<p className={classes.paragraph}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-						incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-						ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+					<p className={classes.paragraph}>an opportunity for individuals to showcase their skills, learn new technologies, and network with like-minded individuals. The "Solve It" hackathon provides a unique chance for individuals to come together, collaborate and create innovative solutions to real-world problems.
 					</p>
 				</Center>
 
 				<Center>
-					<b >
+					<b style={{ textAlign: "center" }}>
 						The event starts in
 					</b>
 				</Center>

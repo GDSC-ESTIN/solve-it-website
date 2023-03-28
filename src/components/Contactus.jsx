@@ -1,8 +1,9 @@
-import { Center, Container, Stack, Title, useMantineTheme } from "@mantine/core";
+import { Center, Container, Stack, Textarea, TextInput, Title, useMantineTheme, Button } from "@mantine/core";
 import useStyles from "./Contactus-style";
-import { Button, TextField } from "@mui/material";
-
-function Contactus() {
+import { useForm } from "@mantine/form";
+import axios from "axios";
+import { useState } from "react";
+function Contactus({ setModalContent, setModalOpened }) {
 	const { classes } = useStyles();
 	return (
 		<>
@@ -19,7 +20,7 @@ function Contactus() {
 						We are here for you! how can we help you ?
 					</p>
 				</Center>
-				<ContactForm />
+				<ContactForm setModalContent={setModalContent} setModalOpened={setModalOpened} />
 			</Container>
 		</>
 	);
@@ -29,29 +30,68 @@ export default Contactus
 
 
 
-function ContactForm() {
+function ContactForm({ setModalContent, setModalOpened }) {
+	const [loading, setLoading] = useState(false)
 	const theme = useMantineTheme();
+	const form = useForm({
+		initialValues: {
+			name: "",
+			address: "",
+			message: ""
+		},
+		validate: {
+			name: (value) => (value.length > 0 ? null : 'Invalid fullName'),
+			address: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
+			message: (value) => (value.length > 0 ? null : 'Invalid message')
+		}
+	})
+
+	const submitHandeler = (e) => {
+		e.preventDefault();
+		const errors = form.validate();
+		if (errors.hasErrors) {
+			console.log("idk what to put in this if block, dont judge me")
+		} else {
+			setLoading(true)
+			axios.post("https://mouayed01.pythonanywhere.com/api/contactform", form.values)
+				.then((res) => {
+					setModalContent("Your Form has been submitted successfully, we will contact you soon")
+					setModalOpened(true)
+					form.setFieldValue('name', "")
+					form.setFieldValue('address', "")
+					form.setFieldValue('message', "")
+					setLoading(false)
+				})
+				.catch((err) => {
+					setModalContent("Something went wrong, please try again later")
+					setModalOpened(true)
+					setLoading(false)
+				})
+		}
+	}
 	return (
 		<>
 			<Container size={"xs"} >
 				<Stack>
-					<TextField sx={{ backgroundColor: "white" }}
-						// error helperText="please enter your name"
-						id="outlined-basic"
-						label="Enter your name "
-						variant="outlined"
+					<TextInput
+						placeholder="Enter your name"
+						size="md"
+						withAsterisk
+						{...form.getInputProps('name')}
 					/>
-					<TextField sx={{ backgroundColor: "white" }}
-						// error helperText="please enter your mail adress"
-						id="outlined-basic"
-						label="Enter your mail adresse" variant="outlined"
+					<TextInput
+						placeholder="Enter your email address"
+						size="md"
+						withAsterisk
+						{...form.getInputProps('address')}
 					/>
-					<TextField sx={{ backgroundColor: "white" }}
-						// error helperText="please enter your message"
-						id="outlined-multiline-static"
-						label="Enter your message"
-						multiline
-						rows={4}
+					<Textarea
+						placeholder="Enter your message"
+						size="md"
+						withAsterisk
+						minRows={4}
+						maxRows={4}
+						{...form.getInputProps('message')}
 					/>
 					<Button sx={{
 						boxShadow: "none",
@@ -60,6 +100,8 @@ function ContactForm() {
 						fontSize: theme.fontSizes.sm
 					}}
 						variant="contained"
+						onClick={submitHandeler}
+						loading={loading}
 
 					>Submit</Button>
 				</Stack>

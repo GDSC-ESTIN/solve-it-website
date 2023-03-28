@@ -9,3 +9,9 @@
 body {
   background-color: #F4F4F4;
 }
+
+.mantine-Drawer-drawer {
+  background-color: #fefffe;
+  margin: 0;
+  padding: 0;
+}

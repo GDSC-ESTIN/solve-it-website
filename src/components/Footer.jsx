@@ -7,7 +7,7 @@ import linkedInIcon from "../assets/IconLinkedin.svg"
 export default function Footer() {
 	return (
 		<Box py="xl" sx={{ backgroundColor: "#0F9D58" }}>
-			<Center><b style={{ color: "white", marginBottom: "10px" }}>All rights reserved to</b></Center>
+			<Center><b style={{ color: "white", marginBottom: "10px", textAlign: "center" }}>All rights reserved to</b></Center>
 			<Container size="xs">
 				<img src={logo} alt="full-logo" width="100%" />
 			</Container>

@@ -14,9 +14,7 @@ function About() {
 				</Center>
 
 				<Center>
-					<p className={classes.paragraph}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-						incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-						ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+					<p className={classes.paragraph}>Welcome to the official website of the 'Solve It' hackathon! This dynamic event brings together the best and brightest from the tech community to collaborate and find innovative solutions to real-world problems. Whether you're a seasoned developer or just starting out, this hackathon provides a chance for you to showcase your skills, learn new technologies, and network with like-minded individuals. The 'Solve It' hackathon is designed to encourage collaboration, creativity, and problem-solving, and it's the perfect opportunity to push the boundaries of what's possible. So what are you waiting for? Join us in the quest to #SolveIt! Register now and be a part of this exciting event.
 					</p>
 				</Center>
 			</Container>
